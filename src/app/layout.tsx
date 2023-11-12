@@ -18,6 +18,7 @@ export default function RootLayout({
       <body className="bg-[#bae1ff]">
         <SiteHeader />
         {children}
+        <footer className="bg-green-500 h-20"></footer>
       </body>
     </html>
   );
