@@ -2,7 +2,7 @@ export default function SiteHeader() {
   return (
     <div className="py-8 px-16">
       <img
-        src="https://fontmeme.com/temporary/626129e14a8a420da181cfbedfaf6e19.png"
+        src="https://fontmeme.com/permalink/231112/a4950fc18ecac840805ccc86953d9358.png"
         alt=""
         width={600}
       />

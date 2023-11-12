@@ -5,13 +5,21 @@ export default function Mario() {
   const [gameStarted, setGameStarted] = useState<boolean>(false);
   const [marioPos, setMarioPos] = useState<number>(0);
 
+  const startGame = () => {
+    setGameStarted(true);
+  };
+  const stopGame = () => {
+    setGameStarted(false);
+  };
+
+  const handleKeyPress = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    if (e.key === "up") {
+    }
+  };
+
   return (
     <div>
-      <img
-        src="https://assets.stickpng.com/images/584df3ad6a5ae41a83ddee08.png"
-        alt=""
-        width={200}
-      />
+      <img src="https://pngimg.com/d/mario_PNG79.png" alt="" width={200} />
     </div>
   );
 }
