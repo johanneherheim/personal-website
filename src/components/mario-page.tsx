@@ -41,7 +41,7 @@ export default function MarioPage() {
   return (
     <div>
       <SiteHeader />
-      <div className="flex justify-evenly mb-32 mt-32">
+      <div className="flex justify-evenly mb-64 mt-32">
         {links.map((link) => (
           <div key={link.name} className="flex justify-evenly">
             <img
@@ -68,7 +68,7 @@ export default function MarioPage() {
       <div>
         <Mario />
       </div>
-      <footer className="bg-green-500 h-40 bottom-0"></footer>
+      <footer className="bg-green-500 h-64 bottom-0"></footer>
     </div>
   );
 }
