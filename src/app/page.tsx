@@ -40,8 +40,7 @@ export default function HomePage() {
             <Gamepad2 />
           </button>
         </div>
-        {marioMode && <MarioPage />} {nightMode && <NightPage />}{" "}
-        {dayMode && <DayPage />}
+        {marioMode && <MarioPage />} {nightMode && <NightPage />}{!marioMode && !nightMode && <DayPage />}
       </div>
     </div>
   );
