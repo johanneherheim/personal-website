@@ -1,47 +1,14 @@
-"use client";
-import React, { useState } from "react";
-import MarioPage from "../components/mario-page";
-import NightPage from "@/components/night-page";
-import { MoonStar } from "lucide-react";
-import { Gamepad2 } from "lucide-react";
-import { Sun } from "lucide-react";
-import DayPage from "@/components/day-page";
+import { Moon, Sun } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
-export default function HomePage() {
-  const [dayMode, setDayMode] = useState(true);
-  const [nightMode, setNightMode] = useState(false);
-  const [marioMode, setMarioMode] = useState(false);
-
-  const toggleNightMode = () => {
-    setNightMode((prev) => !prev);
-    setMarioMode(false);
-    setDayMode((prev) => !prev);
-  };
-  const toggleMarioMode = () => {
-    setMarioMode((prev) => !prev);
-    setDayMode((prev) => !prev);
-    setNightMode(false);
-  };
-
+export default function ModeToggle() {
   return (
-    <div>
-      <div>
-        <div className="absolute right-0">
-          <button
-            className="p-2 m-3 border border-black rounded-md"
-            onClick={toggleNightMode}
-          >
-            <MoonStar />
-          </button>
-          <button
-            className="p-2 m-3 border border-black rounded-md"
-            onClick={toggleMarioMode}
-          >
-            <Gamepad2 />
-          </button>
-        </div>
-        {marioMode && <MarioPage />} {nightMode && <NightPage />}{!marioMode && !nightMode && <DayPage />}
-      </div>
+    <div className="right-0 absolute p-5">
+      <Button variant="outline" size="icon">
+        <Sun className="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
+        <Moon className="absolute h-[1.2rem] w-[1.2rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
+        <span className="sr-only">Toggle theme</span>
+      </Button>
     </div>
   );
 }
