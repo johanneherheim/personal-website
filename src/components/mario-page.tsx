@@ -39,7 +39,7 @@ export const links = [
 
 export default function MarioPage() {
   return (
-    <div>
+    <div className="max-h-screen">
       <SiteHeader />
       <div className="flex justify-evenly mb-64 mt-32">
         {links.map((link) => (
@@ -68,7 +68,7 @@ export default function MarioPage() {
       <div>
         <Mario />
       </div>
-      <footer className="bg-green-500 h-64 bottom-0"></footer>
+      <footer className="bg-green-500 h-48 bottom-0"></footer>
     </div>
   );
 }
