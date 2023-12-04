@@ -11,10 +11,10 @@ export function ModeToggle() {
 
   const toggleDarkMode = () => {
     if (darkMode) {
-      setTheme("dark");
+      setTheme("light");
       setDarkMode(false);
     } else {
-      setTheme("light");
+      setTheme("dark");
       setDarkMode(true);
     }
   };
