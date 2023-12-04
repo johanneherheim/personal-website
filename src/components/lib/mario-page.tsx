@@ -7,7 +7,7 @@ import {
 } from "lucide-react";
 import Link from "next/link";
 import Mario from "./mario";
-import SiteHeader from "../components/site-header";
+import SiteHeader from "../site-header";
 
 export const links = [
   {
