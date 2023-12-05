@@ -1,4 +1,5 @@
 "use client";
+import { Button } from "@/components/ui/button";
 import React, { useState } from "react";
 
 export default function AbcCalc() {
@@ -33,36 +34,35 @@ export default function AbcCalc() {
   };
 
   return (
-    <div className="flex justify-center font-semibold flex-col">
+    <div className="flex font-semibold w-80 items-center flex-col">
       <h2>ABC-formel kalkulator</h2>
-      <input
-        className="mb-3 px-2 w-12 border"
-        type="text"
-        value={A}
-        onChange={(e) => setA(e.target.value)}
-        placeholder="a"
-      />
-      <input
-        className="mb-3 px-2 w-12 border"
-        type="text"
-        value={B}
-        onChange={(e) => setB(e.target.value)}
-        placeholder="b"
-      />
-      <input
-        className="mb-3 px-2 w-12 border"
-        type="text"
-        value={C}
-        onChange={(e) => setC(e.target.value)}
-        placeholder="c"
-        onKeyPress={handleKeyPress}
-      />
-      <button
-        onClick={calculate}
-        className="ml-2 px-2 py-1 bg-blue-500 text-white rounded"
-      >
+      <div>
+        <input
+          className="m-3 px-2 w-12 border"
+          type="text"
+          value={A}
+          onChange={(e) => setA(e.target.value)}
+          placeholder="a"
+        />
+        <input
+          className="m-3 px-2 w-12 border"
+          type="text"
+          value={B}
+          onChange={(e) => setB(e.target.value)}
+          placeholder="b"
+        />
+        <input
+          className="m-3 px-2 w-12 border"
+          type="text"
+          value={C}
+          onChange={(e) => setC(e.target.value)}
+          placeholder="c"
+          onKeyPress={handleKeyPress}
+        />
+      </div>
+      <Button onClick={calculate} variant="secondary" className="m-2 p-2">
         Calculate
-      </button>
+      </Button>
       <p>
         {answer.length > 0
           ? `Roots: ${answer.join(", ")}`
