@@ -21,7 +21,7 @@ export function ModeToggle() {
 
   return (
     <div onClick={toggleDarkMode}>
-      <Button variant="secondary" size="icon">
+      <Button variant="defaultsec" size="icon">
         <Moon className=" rotate-0 scale-100 transition-all dark:scale-0" />
         <Sun className="absolute rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
       </Button>

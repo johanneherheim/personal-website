@@ -35,24 +35,24 @@ export default function AbcCalc() {
 
   return (
     <div className="flex font-semibold w-80 items-center flex-col">
-      <h2>ABC-formel kalkulator</h2>
+      <h2 className="tracking-wide">ABC-formel kalkulator</h2>
       <div>
         <input
-          className="m-3 px-2 w-12 border"
+          className="m-3 px-2 w-12 border bg-secondary rounded"
           type="text"
           value={A}
           onChange={(e) => setA(e.target.value)}
           placeholder="a"
         />
         <input
-          className="m-3 px-2 w-12 border"
+          className="m-3 px-2 w-12 border bg-secondary rounded"
           type="text"
           value={B}
           onChange={(e) => setB(e.target.value)}
           placeholder="b"
         />
         <input
-          className="m-3 px-2 w-12 border"
+          className="m-3 px-2 w-12 border bg-secondary rounded"
           type="text"
           value={C}
           onChange={(e) => setC(e.target.value)}
@@ -60,12 +60,12 @@ export default function AbcCalc() {
           onKeyPress={handleKeyPress}
         />
       </div>
-      <Button onClick={calculate} variant="secondary" className="m-2 p-2">
-        Calculate
+      <Button onClick={calculate} variant="defaultsec" className="m-2 p-2">
+        Rekn ut
       </Button>
       <p>
         {answer.length > 0
-          ? `Roots: ${answer.join(", ")}`
+          ? `Røttene er: ${answer.join(", ")}`
           : answer === null
           ? "No real roots"
           : ""}

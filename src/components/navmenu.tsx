@@ -8,7 +8,7 @@ import Link from "next/link";
 export function NavMenu() {
   return (
     <div className="flex gap-3">
-      <Button variant="secondary">
+      <Button variant="outline">
         <Link
           className="flex justify-between hover:underline decoration-1 underline-offset-2 w-auto"
           href="/projects"
@@ -16,7 +16,7 @@ export function NavMenu() {
           Prosjekter
         </Link>
       </Button>
-      <Button variant="secondary">
+      <Button variant="outline">
         <Link
           className="flex justify-between hover:underline decoration-1 underline-offset-2 w-auto"
           href="/tools"
@@ -24,7 +24,7 @@ export function NavMenu() {
           Verktøy
         </Link>
       </Button>
-      <Button variant="secondary">
+      <Button variant="outline">
         <Link
           className="flex justify-between hover:underline decoration-1 underline-offset-2 w-auto"
           href="/games"
@@ -44,7 +44,7 @@ export function DropDownNavMenu({ onClose }: DropDownNavMenuProps) {
   return (
     <nav className="absolute right-0">
       <div className="flex flex-col gap-2 p-2 mt-1">
-        <Button variant="secondary" onClick={onClose}>
+        <Button variant="outline" onClick={onClose}>
           <Link
             className="flex justify-between hover:underline decoration-1 underline-offset-2 w-auto"
             href="/projects"
@@ -52,7 +52,7 @@ export function DropDownNavMenu({ onClose }: DropDownNavMenuProps) {
             Prosjekter
           </Link>
         </Button>
-        <Button variant="secondary">
+        <Button variant="outline">
           <Link
             className="flex justify-between hover:underline decoration-1 underline-offset-2 w-auto"
             href="/tools"
@@ -60,7 +60,7 @@ export function DropDownNavMenu({ onClose }: DropDownNavMenuProps) {
             Verktøy
           </Link>
         </Button>
-        <Button variant="secondary" onClick={onClose}>
+        <Button variant="outline" onClick={onClose}>
           <Link
             className="flex justify-between hover:underline decoration-1 underline-offset-2 w-auto"
             href="/games"
