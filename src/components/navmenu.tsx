@@ -9,15 +9,29 @@ export function NavMenu() {
   return (
     <div className="flex gap-3">
       <Button variant="secondary">
-          <Link className="flex justify-between hover:underline decoration-1 underline-offset-2 w-auto" href="/projects">
-            Prosjekter
-          </Link>
-        </Button>
-        <Button variant="secondary">
-          <Link className="flex justify-between hover:underline decoration-1 underline-offset-2 w-auto" href="/games">
-            Spill
-          </Link>
-        </Button>
+        <Link
+          className="flex justify-between hover:underline decoration-1 underline-offset-2 w-auto"
+          href="/projects"
+        >
+          Prosjekter
+        </Link>
+      </Button>
+      <Button variant="secondary">
+        <Link
+          className="flex justify-between hover:underline decoration-1 underline-offset-2 w-auto"
+          href="/tools"
+        >
+          Verktøy
+        </Link>
+      </Button>
+      <Button variant="secondary">
+        <Link
+          className="flex justify-between hover:underline decoration-1 underline-offset-2 w-auto"
+          href="/games"
+        >
+          Spill
+        </Link>
+      </Button>
     </div>
   );
 }
@@ -31,12 +45,26 @@ export function DropDownNavMenu({ onClose }: DropDownNavMenuProps) {
     <nav className="absolute right-0">
       <div className="flex flex-col gap-2 p-2 mt-1">
         <Button variant="secondary" onClick={onClose}>
-          <Link className="flex justify-between hover:underline decoration-1 underline-offset-2 w-auto" href="/projects">
+          <Link
+            className="flex justify-between hover:underline decoration-1 underline-offset-2 w-auto"
+            href="/projects"
+          >
             Prosjekter
           </Link>
         </Button>
+        <Button variant="secondary">
+          <Link
+            className="flex justify-between hover:underline decoration-1 underline-offset-2 w-auto"
+            href="/tools"
+          >
+            Verktøy
+          </Link>
+        </Button>
         <Button variant="secondary" onClick={onClose}>
-          <Link className="flex justify-between hover:underline decoration-1 underline-offset-2 w-auto" href="/games">
+          <Link
+            className="flex justify-between hover:underline decoration-1 underline-offset-2 w-auto"
+            href="/games"
+          >
             Spill
           </Link>
         </Button>
