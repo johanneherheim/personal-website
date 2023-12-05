@@ -1,5 +1,5 @@
 import React from 'react'
-import InfoCards, { cards } from "../components/info-cards";
+import InfoCards, { cards } from "./infocards";
 
 export default function InfoCardPage() {
   return (

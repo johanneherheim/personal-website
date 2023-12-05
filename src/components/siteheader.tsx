@@ -1,7 +1,7 @@
 "use client"
 import Link from "next/link";
-import { ModeToggle } from "./mode-toggle";
-import { NavMenu, NavBurger} from "./nav-menu";
+import { ModeToggle } from "./darkmode";
+import { NavMenu, NavBurger} from "./navmenu";
 
 export default function SiteHeader() {
   const HeaderText = ["Johanne Blikberg Herheim", "JBH"];
