@@ -1,6 +1,7 @@
 "use client";
 import { Button } from "@/components/ui/button";
 import React, { useState } from "react";
+import { RotateCw } from "lucide-react";
 
 export default function AbcCalc() {
   const calc = (a: number, b: number, c: number): any => {
@@ -33,8 +34,16 @@ export default function AbcCalc() {
     setAnswer(calc(Number(A), Number(B), Number(C)));
   };
 
+  const resetInputs = () => {
+    // Reset the input values and result
+    setA("");
+    setB("");
+    setC("");
+    setAnswer([]);
+  };
+
   return (
-    <div className="flex font-semibold w-80 items-center flex-col">
+    <div className="flex font-semiboldx items-center flex-col bg-card rounded py-5 w-80 m-2">
       <h2 className="tracking-wide">ABC-formel kalkulator</h2>
       <div>
         <input
@@ -60,15 +69,21 @@ export default function AbcCalc() {
           onKeyPress={handleKeyPress}
         />
       </div>
+      <div className="flex">
+
+      <Button onClick={resetInputs} variant="defaultsec" className="m-2 p-2">
+          <RotateCw className="scale-75"/>
+        </Button>
       <Button onClick={calculate} variant="defaultsec" className="m-2 p-2">
-        Rekn ut
-      </Button>
+          Rekn ut
+        </Button>
+      </div>
       <p>
         {answer.length > 0
-          ? `Røttene er: ${answer.join(", ")}`
+          ? `Røttene er: x = ${answer.join(" og x = ")}`
           : answer === null
           ? "No real roots"
-          : ""}
+          : "Røttene er: ..."}
       </p>
     </div>
   );

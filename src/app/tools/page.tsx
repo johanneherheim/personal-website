@@ -3,7 +3,9 @@ import AbcCalc from "./abc-calc";
 
 export default function ToolPage() {
   return (
-    <div className="grid w-screen grid-cols-1 sm:grid-cols-2 md:grid-cols-3 m-10">
+    <div className="flex-wrap flex w-full p-10 justify-center basis-80">
+      <AbcCalc />
+      <AbcCalc />
       <AbcCalc />
     </div>
   );

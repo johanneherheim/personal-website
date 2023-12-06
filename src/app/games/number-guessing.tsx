@@ -18,6 +18,7 @@ const NumberGuessingGame: React.FC = () => {
     setNumTries(0);
     setGameStarted(true);
     setOpenGame(true);
+    setUserGuess("")
   };
 
   const stopGame = () => {
@@ -67,27 +68,26 @@ const NumberGuessingGame: React.FC = () => {
   };
 
   return (
-    <div className="bg-secondary mx-1 rounded-md p-5">
+    <div className="bg-card rounded p-2 m-2 w-96 h-52 ">
       {guessedCorrectly && <Confetti />}
       {openGame ? (
         <button
-          className=" bg-secondary py-2 rounded-md w-48 sm:w-full"
-          onClick={stopGame}
+          className=" bg-secondary rounded p-2 m-2"
+          onClick={startGame}
         >
-          Stopp spillet
+          Generer nytt tall
         </button>
       ) : (
         <button
-          className=" bg-secondary py-2 rounded-md w-48 sm:w-full"
+          className=" hover:bg-secondary rounded p-2 m-2"
           onClick={startGame}
         >
           Start tall-gjettespill
         </button>
       )}
       <div>
-        {openGame === true && (
           <>
-            <p className="my-4">
+            <p className="my-4 mx-5">
               Forsøk: {numTries} <br />
               Gjett talet i intervallet [0, 10]:
             </p>
@@ -101,7 +101,6 @@ const NumberGuessingGame: React.FC = () => {
             />
             <p className="pb-3">{result}</p>
           </>
-        )}
       </div>
     </div>
   );

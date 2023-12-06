@@ -3,12 +3,12 @@ import React, { useState } from "react";
 import Confetti from "react-confetti";
 
 const PokemonGuessingGame: React.FC = () => {
-  const [gameStarted, setGameStarted] = useState<boolean>(false);
+  const [gameStarted, setGameStarted] = useState<boolean>(true);
   const [userGuess, setUserGuess] = useState<string>("");
   const [hint, setHint] = useState<string | null>(null);
   const [numTries, setNumTries] = useState<number>(0);
   const [guessedCorrectly, setGuessedCorrectly] = useState<boolean>(false);
-  const [randomPokemon, setRandomPokemon] = useState<number>(0);
+  const [randomPokemon, setRandomPokemon] = useState<number>(Math.floor(Math.random() * 151) + 1);
 
   const startGame = () => {
     const newSecretNumber = Math.floor(Math.random() * 151) + 1;
@@ -16,6 +16,7 @@ const PokemonGuessingGame: React.FC = () => {
     setHint("Lykke til! 😉");
     setNumTries(0);
     setGameStarted(true);
+    setUserGuess("")
   };
   const stopGame = () => {
     setRandomPokemon(0);
@@ -51,25 +52,24 @@ const PokemonGuessingGame: React.FC = () => {
   };
 
   return (
-    <div className="bg-secondary mx-1 rounded-md p-5">
+    <div className="bg-card rounded p-2 m-2 w-96 h-52">
       {guessedCorrectly && <Confetti />}
       {gameStarted ? (
         <button
-          className=" bg-secondary py-2 rounded-md w-48 sm:w-full"
-          onClick={stopGame}
+          className=" hover:bg-secondary p-2 m-2 rounded"
+          onClick={startGame}
         >
-          Stopp spillet
+          Generer ny pokémon
         </button>
       ) : (
         <button
-          className=" bg-secondary py-2 rounded-md w-48 sm:w-full"
+          className=" hover:bg-secondary p-2 m-2 rounded"
           onClick={startGame}
         >
           Start pokémon-gjettespill
         </button>
       )}
       <div>
-        {gameStarted === true && (
           <div className="flex justify-between">
             <div>
               <img
@@ -85,7 +85,7 @@ const PokemonGuessingGame: React.FC = () => {
                 Gjett pokémonen sin ID!
               </p>
               <input
-                className="mb-3 px-2"
+                className="mb-3 px-2 w-28"
                 type="text"
                 value={userGuess}
                 onChange={(e) => setUserGuess(e.target.value)}
@@ -95,7 +95,6 @@ const PokemonGuessingGame: React.FC = () => {
               <p className="pb-3">{hint}</p>
             </div>
           </div>
-        )}
       </div>
     </div>
   );

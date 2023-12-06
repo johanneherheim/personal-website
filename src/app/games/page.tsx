@@ -4,15 +4,13 @@ import PokemonGuessingGame from './pokemon-guessing'
 
 export default function GamePage() {
   return (
-    <div className='flex justify-center '> 
-        <section>
-        <div className=" rounded-md mt-10 mx-auto max-w-md text-center">
+    <div className='flex-wrap flex w-full p-10 justify-center basis-80'> 
+        <div className=" rounded-md text-center">
           <NumberGuessingGame />
         </div>
-        <div className=" rounded-md mt-5 mx-auto max-w-md text-center">
+        <div className=" rounded-md text-center">
           <PokemonGuessingGame />
         </div>
-      </section>
     </div>
   )
 }

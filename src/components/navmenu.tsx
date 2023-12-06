@@ -43,7 +43,7 @@ interface DropDownNavMenuProps {
 export function DropDownNavMenu({ onClose }: DropDownNavMenuProps) {
   return (
     <nav className="absolute right-0">
-      <div className="flex flex-col gap-2 p-2 mt-1">
+      <div className="flex flex-col gap-2 p-2 mt-2 bg-card rounded-b">
         <Button variant="outline" onClick={onClose}>
           <Link
             className="flex justify-between hover:underline decoration-1 underline-offset-2 w-auto"
@@ -82,7 +82,8 @@ export function NavBurger() {
 
   return (
     <div>
-      <Button size="icon" variant="secondary" onClick={toggleBurger}>
+      <Button size="icon" variant="outline" onClick={toggleBurger}>
+
         <Menu />
       </Button>
       {burger ? <DropDownNavMenu onClose={toggleBurger} /> : null}
