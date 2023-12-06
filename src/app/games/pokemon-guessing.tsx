@@ -8,7 +8,9 @@ const PokemonGuessingGame: React.FC = () => {
   const [hint, setHint] = useState<string | null>(null);
   const [numTries, setNumTries] = useState<number>(0);
   const [guessedCorrectly, setGuessedCorrectly] = useState<boolean>(false);
-  const [randomPokemon, setRandomPokemon] = useState<number>(Math.floor(Math.random() * 151) + 1);
+  const [randomPokemon, setRandomPokemon] = useState<number>(
+    Math.floor(Math.random() * 151) + 1
+  );
 
   const startGame = () => {
     const newSecretNumber = Math.floor(Math.random() * 151) + 1;
@@ -16,7 +18,7 @@ const PokemonGuessingGame: React.FC = () => {
     setHint("Lykke til! 😉");
     setNumTries(0);
     setGameStarted(true);
-    setUserGuess("")
+    setUserGuess("");
   };
   const stopGame = () => {
     setRandomPokemon(0);
@@ -49,14 +51,15 @@ const PokemonGuessingGame: React.FC = () => {
     } else {
       setHint("Prøv eit høgare tal");
     }
+    setUserGuess("");
   };
 
   return (
-    <div className="bg-card rounded p-2 m-2 w-96 h-52">
+    <div className="bg-card rounded p-2 m-2 w-96 h-60">
       {guessedCorrectly && <Confetti />}
       {gameStarted ? (
         <button
-          className=" hover:bg-secondary p-2 m-2 rounded"
+          className=" bg-secondary p-2 m-2 rounded"
           onClick={startGame}
         >
           Generer ny pokémon
@@ -70,31 +73,31 @@ const PokemonGuessingGame: React.FC = () => {
         </button>
       )}
       <div>
-          <div className="flex justify-between">
-            <div>
-              <img
-                className="max-h-32 ml-8 my-2"
-                src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${randomPokemon}.png`}
-                alt="react image"
-                loading="lazy"
-              />
-            </div>
-            <div className="mx-4">
-              <p className="my-4">
-                Forsøk: {numTries} <br />
-                Gjett pokémonen sin ID!
-              </p>
-              <input
-                className="mb-3 px-2 w-28"
-                type="text"
-                value={userGuess}
-                onChange={(e) => setUserGuess(e.target.value)}
-                onKeyPress={handleKeyPress}
-                placeholder="Gjett et tall"
-              />
-              <p className="pb-3">{hint}</p>
-            </div>
+        <div className="flex justify-between">
+          <div>
+            <img
+              className="max-h-32 ml-8 my-2"
+              src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${randomPokemon}.png`}
+              alt="react image"
+              loading="lazy"
+            />
           </div>
+          <div className="mx-4">
+            <p className="my-4">
+              Forsøk: {numTries} <br />
+              Gjett pokémonen sin ID!
+            </p>
+            <input
+              className="mb-3 px-2 w-28"
+              type="text"
+              value={userGuess}
+              onChange={(e) => setUserGuess(e.target.value)}
+              onKeyPress={handleKeyPress}
+              placeholder="Gjett et tall"
+            />
+            <p className="pb-3">{hint}</p>
+          </div>
+        </div>
       </div>
     </div>
   );

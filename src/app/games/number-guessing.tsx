@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import Confetti from "react-confetti";
 
 const NumberGuessingGame: React.FC = () => {
-  const [openGame, setOpenGame] = useState<boolean>(false);
+  const [openGame, setOpenGame] = useState<boolean>(true);
   const [secretNumber, setSecretNumber] = useState<number | null>(null);
   const [userGuess, setUserGuess] = useState<string>("");
   const [result, setResult] = useState<string | null>(null);
@@ -46,7 +46,7 @@ const NumberGuessingGame: React.FC = () => {
       setGuessedCorrectly(true);
       setTimeout(() => {
         setGuessedCorrectly(false);
-        setOpenGame(false);
+       /*  setOpenGame(false) */;
       }, 8000);
     } else if (numTries === 0) {
       setResult("Ikkje så lett?");
@@ -65,10 +65,11 @@ const NumberGuessingGame: React.FC = () => {
     } else {
       setResult("Eg trur du burde gi deg snart 🥲");
     }
+    setUserGuess("")
   };
 
   return (
-    <div className="bg-card rounded p-2 m-2 w-96 h-52 ">
+    <div className="bg-card rounded p-2 m-2 w-96 h-60 ">
       {guessedCorrectly && <Confetti />}
       {openGame ? (
         <button
