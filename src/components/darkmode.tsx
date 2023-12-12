@@ -7,7 +7,7 @@ import { Button } from "./ui/button";
 
 export function ModeToggle() {
   const { setTheme } = useTheme();
-  const [darkMode, setDarkMode] = React.useState(true);
+  const [darkMode, setDarkMode] = React.useState(false);
 
   return (
     <div onClick={() => {setDarkMode(!darkMode); darkMode ? setTheme("dark") : setTheme("light")}}>
