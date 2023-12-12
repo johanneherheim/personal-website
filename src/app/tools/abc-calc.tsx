@@ -71,10 +71,10 @@ export default function AbcCalc() {
       </div>
       <div className="flex">
 
-      <Button onClick={resetInputs} variant="defaultsec" className="m-2 p-2">
+      <Button onClick={resetInputs} variant="secondary" className="m-2 p-2">
           <RotateCw className="scale-75"/>
         </Button>
-      <Button onClick={calculate} variant="defaultsec" className="m-2 p-2">
+      <Button onClick={calculate} variant="secondary" className="m-2 p-2">
           Rekn ut
         </Button>
       </div>
