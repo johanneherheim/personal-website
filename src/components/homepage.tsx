@@ -16,7 +16,7 @@ export default function HomePage() {
           />
         </div>
         <div>
-          <h2 className="pb-5 border-b">Titthei 👋🏼</h2>
+          <h2 className="pb-5 border-b hidden sm:block">Titthei 👋🏼</h2>
           <div className="overflow-hidden rounded-full border h-40 w-40 sm:hidden block my-10 mx-auto">
             <Image
               src={me}
@@ -25,7 +25,7 @@ export default function HomePage() {
               className="h-40 w-40 object-cover rounded"
             />
           </div>
-          <p className="pb-5 sm:pt-5 sm:border-none border-b text-center sm:text-left">
+          <p className="pb-5 sm:pt-5 sm:border-none text-center sm:text-left">
             Mitt navn er Johanne, og eg studerer informatikk; datatryggleik ved
             Universitetet i Bergen 👩🏼‍💻.
           </p>
