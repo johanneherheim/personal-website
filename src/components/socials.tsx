@@ -40,7 +40,7 @@ export function NavLink({
 
 export default function SocialLinks() {
   return (
-    <div className="flex gap-5 flex-col sm:flex-row pt-8 border-t sm:border-none sm:pt-3">
+    <div className="flex gap-5 flex-col sm:flex-row py-8 border-y sm:border-none sm:pt-3">
       {links.map((link) => (
         <div key={link.name} className="mx-auto sm:mx-0">
           <NavLink key={link.name} href={link.href} target="_blank">
