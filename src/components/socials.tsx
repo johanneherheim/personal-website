@@ -44,10 +44,9 @@ export default function SocialLinks() {
       {links.map((link) => (
         <div key={link.name} className="mx-auto sm:mx-0">
           <NavLink key={link.name} href={link.href} target="_blank">
-            <div className="flex gap-5 justify-between sm:items-start">
+            <div className="flex gap-5 justify-between w-full sm:items-start">
               <p className="my-auto">{link.name}</p>
-              <p></p>
-              {link.icon}
+              <div>{link.icon}</div>
             </div>
           </NavLink>
         </div>
