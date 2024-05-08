@@ -6,9 +6,13 @@ import { Menu } from "lucide-react";
 import Link from "next/link";
 
 export function NavMenu() {
+  const handleButtonClick = (href: string) => {
+    window.location.href = href;
+  };
+
   return (
     <div className="flex gap-3">
-      <Button variant="outline">
+      <Button variant="outline" onClick={() => handleButtonClick("/projects")}>
         <Link
           className="flex justify-between hover:underline decoration-1 underline-offset-2 w-auto"
           href="/projects"
@@ -16,7 +20,7 @@ export function NavMenu() {
           Prosjekter
         </Link>
       </Button>
-      <Button variant="outline">
+      <Button variant="outline" onClick={() => handleButtonClick("/tools")}>
         <Link
           className="flex justify-between hover:underline decoration-1 underline-offset-2 w-auto"
           href="/tools"
@@ -24,7 +28,7 @@ export function NavMenu() {
           Verktøy
         </Link>
       </Button>
-      <Button variant="outline">
+      <Button variant="outline" onClick={() => handleButtonClick("/games")}>
         <Link
           className="flex justify-between hover:underline decoration-1 underline-offset-2 w-auto"
           href="/games"
