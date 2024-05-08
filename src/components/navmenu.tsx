@@ -6,31 +6,26 @@ import { Menu } from "lucide-react";
 import Link from "next/link";
 
 export function NavMenu() {
+  const handleButtonClick = (href: string) => {
+    window.location.href = href;
+  };
+
   return (
     <div className="flex gap-3">
-      <Button variant="outline">
-        <Link
-          className="flex justify-between hover:underline decoration-1 underline-offset-2 w-auto"
-          href="/projects"
-        >
+      <Button variant="outline" onClick={() => handleButtonClick("/projects")}>
+        <div className="flex justify-between hover:underline decoration-1 underline-offset-2 w-auto">
           Prosjekter
-        </Link>
+        </div>
       </Button>
-      <Button variant="outline">
-        <Link
-          className="flex justify-between hover:underline decoration-1 underline-offset-2 w-auto"
-          href="/tools"
-        >
+      <Button variant="outline" onClick={() => handleButtonClick("/tools")}>
+        <div className="flex justify-between hover:underline decoration-1 underline-offset-2 w-auto">
           Verktøy
-        </Link>
+        </div>
       </Button>
-      <Button variant="outline">
-        <Link
-          className="flex justify-between hover:underline decoration-1 underline-offset-2 w-auto"
-          href="/games"
-        >
+      <Button variant="outline" onClick={() => handleButtonClick("/games")}>
+        <div className="flex justify-between hover:underline decoration-1 underline-offset-2 w-auto">
           Spill
-        </Link>
+        </div>
       </Button>
     </div>
   );
@@ -83,7 +78,6 @@ export function NavBurger() {
   return (
     <div>
       <Button size="icon" variant="outline" onClick={toggleBurger}>
-
         <Menu />
       </Button>
       {burger ? <DropDownNavMenu onClose={toggleBurger} /> : null}
