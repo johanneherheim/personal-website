@@ -13,28 +13,19 @@ export function NavMenu() {
   return (
     <div className="flex gap-3">
       <Button variant="outline" onClick={() => handleButtonClick("/projects")}>
-        <Link
-          className="flex justify-between hover:underline decoration-1 underline-offset-2 w-auto"
-          href="/projects"
-        >
+        <div className="flex justify-between hover:underline decoration-1 underline-offset-2 w-auto">
           Prosjekter
-        </Link>
+        </div>
       </Button>
       <Button variant="outline" onClick={() => handleButtonClick("/tools")}>
-        <Link
-          className="flex justify-between hover:underline decoration-1 underline-offset-2 w-auto"
-          href="/tools"
-        >
+        <div className="flex justify-between hover:underline decoration-1 underline-offset-2 w-auto">
           Verktøy
-        </Link>
+        </div>
       </Button>
       <Button variant="outline" onClick={() => handleButtonClick("/games")}>
-        <Link
-          className="flex justify-between hover:underline decoration-1 underline-offset-2 w-auto"
-          href="/games"
-        >
+        <div className="flex justify-between hover:underline decoration-1 underline-offset-2 w-auto">
           Spill
-        </Link>
+        </div>
       </Button>
     </div>
   );
@@ -87,7 +78,6 @@ export function NavBurger() {
   return (
     <div>
       <Button size="icon" variant="outline" onClick={toggleBurger}>
-
         <Menu />
       </Button>
       {burger ? <DropDownNavMenu onClose={toggleBurger} /> : null}
