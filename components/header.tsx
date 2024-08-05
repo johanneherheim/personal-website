@@ -3,6 +3,7 @@ import { useState } from "react";
 import { Button } from "./ui/button";
 import { MenuIcon, X } from "lucide-react";
 import { routes } from "@/app/routes";
+import { SettingsMenu } from "./settings";
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
@@ -10,7 +11,6 @@ export default function Header() {
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
-
   return (
     <div className="flex justify-between p-4 border-b items-center relative">
       <a href="/">
@@ -26,12 +26,19 @@ export default function Header() {
           <MenuIcon />
         </Button>
       </div>
-      <div className="hidden md:flex space-x-5">
-        {routes.map((route) => (
-          <a key={route.en} href={`/${route.slug}`} className="hover:underline">
-            {route.no}
-          </a>
-        ))}
+      <div className="flex gap-5">
+        <div className="hidden md:flex space-x-5">
+          {routes.map((route) => (
+            <a
+              key={route.en}
+              href={`/${route.slug}`}
+              className="hover:underline"
+            >
+              {route.no}
+            </a>
+          ))}
+        </div>
+        <SettingsMenu />
       </div>
 
       {isOpen && (
