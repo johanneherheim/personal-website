@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import meg from "@/components/meg.jpg";
+import meg from "@/components/images/meg.jpg";
 import SocialLinks from "@/components/socials";
 
 export default function HomePage() {
