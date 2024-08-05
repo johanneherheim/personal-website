@@ -26,7 +26,7 @@ export default function SocialLinks() {
       {links.map((link) => (
         <div key={link.name} className="flex">
           <Link key={link.name} href={link.href} target="_blank">
-            <Button className="bg-gradient-to-tl from-primary to-secondary">
+            <Button className="bg-gradient-to-tl from-blue-500 to-green-500">
               <span className="hidden sm:block mr-3">{link.name}</span>
               <span>{link.icon}</span>
             </Button>

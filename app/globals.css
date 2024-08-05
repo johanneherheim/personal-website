@@ -67,9 +67,9 @@
     @apply bg-background text-foreground;
   }
   h1 {
-    @apply text-3xl;
+    @apply text-3xl font-semibold;
   }
   h2 {
-    @apply text-2xl;
+    @apply text-2xl font-semibold;
   }
 }
