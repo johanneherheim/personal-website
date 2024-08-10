@@ -42,7 +42,7 @@ export default function Header() {
         </Button>
       </div>
       {isOpen && (
-        <div className="absolute top-0 left-0 w-full h-screen bg-white z-10 flex flex-col p-4 pl-10 space-y-6 md:hidden">
+        <div className="absolute top-0 left-0 w-full h-screen bg-background z-10 flex flex-col p-4 pl-10 space-y-6 md:hidden">
           <Button
             onClick={toggleMenu}
             size="icon"
