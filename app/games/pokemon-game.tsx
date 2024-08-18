@@ -114,7 +114,7 @@ function ProgressBar({ correct }: { correct: number }) {
   const percentage = total > 0 ? (correct / total) * 100 : 0;
 
   return (
-    <div className="w-full bg-gray-200 rounded-full relative">
+    <div className="w-full bg-background rounded-full relative">
       <div
         className="bg-gradient-to-tl from-blue-500 to-green-500 text-white text-md py-1 px-4 rounded-full h-6 "
         style={{ width: `${percentage}%` }}
