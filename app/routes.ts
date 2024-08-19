@@ -1,10 +1,10 @@
-type route = {
+type Route = {
   no: string;
   en: string;
   slug: string;
 };
 
-export const routes: route[] = [
+export const routes: Route[] = [
   {
     no: "Prosjekter",
     en: "Projects",

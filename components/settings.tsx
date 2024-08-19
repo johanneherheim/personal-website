@@ -1,13 +1,9 @@
-"use client";
-import { Switch } from "@/components/ui/switch";
 import {
   Popover,
   PopoverContent,
   PopoverTrigger,
 } from "@/components/ui/popover";
-import { MoonIcon, SettingsIcon, SunIcon } from "lucide-react";
-import { useTheme } from "next-themes";
-import React, { useEffect, useState } from "react";
+import { SettingsIcon } from "lucide-react";
 import { ModeToggle } from "./togge-theme";
 
 export function SettingsMenu() {
